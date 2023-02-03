@@ -1,10 +1,8 @@
-# vue3-zero-camp
-⭐ Vue 3 Learning Course with mini projects  
+# Setup
+Installing Dependencies
 
-# How to start
-Each lecture has it's own branch in this repo.
-To see the code for a specific lecture, select a branch and click the green 'Code' button to download the zip file.  
-
-각 강의에 해당하는 branch를 업로드해두었습니다. 
-특정 강의 code를 보고 싶으시면 branch를 선택하고 녹색 Code 버튼을 클릭해서 zip파일을 다운로드 하세요. 
-
+각 프로젝트를 시작하기 앞서 package.json 파일에 여러 dependencies를 설치해주세요.
+1. VS Code에서 프로젝트 폴더를 열기
+2. 터미널에서 해당 프로젝트 root 디렉토리로 이동하기
+3. `npm install` or `yarn` 명령어 입력하기
+4. 마지막으로, `npm run serve` or `yarn dev` 로 브라우저에서 프로젝트 미리보기 
