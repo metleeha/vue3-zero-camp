@@ -17,7 +17,12 @@ export default {
                 }
                 this.tempSkill = ''
             }
-        },
+        },        
+        deleteSkill(skill) {
+            this.skills = this.skills.filter(item => {
+                return skill !== item
+            })
+        }
     }
 }
 
@@ -101,7 +106,7 @@ export default {
                         />
                         <div class="flex flex-wrap">
                             <div v-for="skill in skills" :key="skill" class="mt-3 text-xs font-semibold rounded-full px-4 py-1 mx-1 leading-normal bg-indigo-500 text-white hover:bg-gray-900">
-                                <span>{{ skill }}</span>
+                                <span @click="deleteSkill(skill)">{{ skill }}</span>
                             </div>
                         </div>
                     </div>
