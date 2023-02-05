@@ -5,7 +5,19 @@ export default {
             email: '',
             password: '',
             role: '',
+            skills: [],
+            tempSkill: '',
         }
+    },
+    methods: {
+        addSkill($event) {
+            if($event.key === ',' && this.tempSkill) {
+                if (!this.skills.includes(this.tempSkill)) {
+                    this.skills.push(this.tempSkill.slice(0,-1))
+                }
+                this.tempSkill = ''
+            }
+        },
     }
 }
 
@@ -24,7 +36,7 @@ export default {
                         <label 
                             for="email" 
                             class="block font-bold text-sm mb-2">
-                            Email
+                            EMAIL
                         </label>
                         <input 
                             v-model="email"
@@ -43,7 +55,7 @@ export default {
                         <label 
                             for="password" 
                             class="block font-bold text-sm mb-2">
-                            Password
+                            PASSWORD
                         </label>
                         <input 
                             v-model="password"
@@ -62,16 +74,36 @@ export default {
                         <label 
                             for="Role" 
                             class="block font-bold text-sm mb-2">
-                            Role
+                            ROLE
                         </label>
                         <select
                             v-model="role"
                             id="role" 
-                            class="relative block w-full appearance-none rounded-none rounded-b-md border-2 border-gray-300 px-3 py-2 text-gray-900focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" 
+                            class="relative block w-full appearance-none rounded-none rounded-b-md outline-none border-b-2 border-gray-300 px-3 py-2 text-gray-900focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" 
                         >
                             <option value="developer">Web Developer</option>
                             <option value="designer">Web Designer</option>
                         </select>
+                    </div>
+                </div>
+                <div class="-space-y-px rounded-md shadow-sm">
+                    <div class="mb-8">
+                        <label 
+                            for="Skills" 
+                            class="block font-bold text-sm mb-2">
+                            SKILLS (press comma to add)
+                        </label>
+                        <input 
+                            type="text"
+                            v-model="tempSkill"
+                            @keyup="addSkill"
+                            class="relative block w-full appearance-none rounded-none rounded-b-md outline-none border-b-2 border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"         
+                        />
+                        <div class="flex flex-wrap">
+                            <div v-for="skill in skills" :key="skill" class="mt-3 text-xs font-semibold rounded-full px-4 py-1 mx-1 leading-normal bg-indigo-500 text-white hover:bg-gray-900">
+                                <span>{{ skill }}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>
