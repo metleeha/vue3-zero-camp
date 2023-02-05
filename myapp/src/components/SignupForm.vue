@@ -4,6 +4,7 @@ export default {
         return {
             email: '',
             password: '',
+            role: '',
         }
     }
 }
@@ -36,6 +37,8 @@ export default {
                             placeholder="Email" 
                         />
                     </div>
+                </div>
+                <div class="-space-y-px rounded-md shadow-sm">
                     <div class="mb-8">
                         <label 
                             for="password" 
@@ -54,12 +57,29 @@ export default {
                         />
                     </div>
                 </div>
+                <div class="-space-y-px rounded-md shadow-sm">
+                    <div class="mb-8">
+                        <label 
+                            for="Role" 
+                            class="block font-bold text-sm mb-2">
+                            Role
+                        </label>
+                        <select
+                            v-model="role"
+                            id="role" 
+                            class="relative block w-full appearance-none rounded-none rounded-b-md border-2 border-gray-300 px-3 py-2 text-gray-900focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" 
+                        >
+                            <option value="developer">Web Developer</option>
+                            <option value="designer">Web Designer</option>
+                        </select>
+                    </div>
+                </div>
             </form>
             <!-- two-way data binding -->
-            <p class="mt-6 text-sm text-gray-900">Email: {{ email }}</p>
-            <p class="mt-6 text-sm text-gray-900">password: {{ password }}</p>
+            <p class="mb-6 text-sm text-gray-900">Email: {{ email }}</p>
+            <p class="mb-6 text-sm text-gray-900">password: {{ password }}</p>
+            <p class="mb-6 text-sm text-gray-900">Your role: {{ role }}</p>
         </div>
-
     </div>
 </template>
 
