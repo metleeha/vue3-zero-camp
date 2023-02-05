@@ -2,9 +2,15 @@
 </script>
 
 <template>
-  <div class="justify-center flex bg-gradient-to-b from-gray-900 to-gray-600 items-center h-screen">
-    <div class="text-4xl text-white">
-      Start New Project!
+  <div class="bg-gradient-to-b from-gray-900 to-gray-600 items-center h-screen">
+    <nav class="bg-gray-900">
+      <div class="py-6 mx-auto flex justify-center items-center">
+          <router-link class="text-3xl mr-10 font-bold text-white hover:text-purple-500" to="/">HOME</router-link>
+          <router-link class="text-3xl font-bold text-white hover:text-yellow-500" to="/blog">BLOG</router-link>
+      </div>
+    </nav>
+    <div class="mx-auto text-center lg:py-32">
+      <router-view />
     </div>
   </div>
 </template>
