@@ -1,10 +1,12 @@
 <script>
 export default {
+    name: 'SignupForm',
     data() {
         return {
             email: '',
             password: '',
             role: '',
+            terms: false,
             skills: [],
             tempSkill: '',
         }
@@ -12,12 +14,17 @@ export default {
     methods: {
         addSkill($event) {
             if($event.key === ',' && this.tempSkill) {
-                if (!this.skills.includes(this.tempSkill)) {
+                if (!this.skills.includes(this.tempSkill.slice(0,-1))) {
                     this.skills.push(this.tempSkill.slice(0,-1))
                 }
                 this.tempSkill = ''
             }
-        },
+        },        
+        deleteSkill(skill) {
+            this.skills = this.skills.filter(item => {
+                return skill !== item
+            })
+        }
     }
 }
 
@@ -101,16 +108,17 @@ export default {
                         />
                         <div class="flex flex-wrap">
                             <div v-for="skill in skills" :key="skill" class="mt-3 text-xs font-semibold rounded-full px-4 py-1 mx-1 leading-normal bg-indigo-500 text-white hover:bg-gray-900">
-                                <span>{{ skill }}</span>
+                                <span @click="deleteSkill(skill)">{{ skill }}</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
-            <!-- two-way data binding -->
-            <p class="mb-6 text-sm text-gray-900">Email: {{ email }}</p>
-            <p class="mb-6 text-sm text-gray-900">password: {{ password }}</p>
-            <p class="mb-6 text-sm text-gray-900">Your role: {{ role }}</p>
+            <!-- terms -->
+            <div class="flex mt-1 mr-3">
+                <input type="checkbox" v-model="terms" required>
+                <label>&nbsp;Accept terms and conditions</label>
+            </div>
         </div>
     </div>
 </template>
