@@ -5,14 +5,16 @@ export default {
             email: '',
             password: '',
             role: '',
+            terms: false,
             skills: [],
             tempSkill: '',
+            passwordError: null
         }
     },
     methods: {
         addSkill($event) {
             if($event.key === ',' && this.tempSkill) {
-                if (!this.skills.includes(this.tempSkill)) {
+                if (!this.skills.includes(this.tempSkill.slice(0,-1))) {
                     this.skills.push(this.tempSkill.slice(0,-1))
                 }
                 this.tempSkill = ''
@@ -22,6 +24,19 @@ export default {
             this.skills = this.skills.filter(item => {
                 return skill !== item
             })
+        },
+        handleSubmit() {
+            // validate password
+            this.passwordError = this.password.length > 5 ?
+                '' : 'Password must be at least 6 characters long'
+            if (!this.passwordError) {
+                // make request to database 
+                console.log('email: ', this.email)
+                console.log('password: ', this.password)
+                console.log('role: ', this.role)
+                console.log('skills: ', this.skills)
+                console.log('terms accepted: ', this.terms)
+            }
         }
     }
 }
@@ -34,7 +49,7 @@ export default {
         <div class="mt-20">
             <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
         </div>
-        <form class="mt-20 space-y-6" action="#" method="POST">
+        <form class="mt-20 space-y-6" @submit.prevent="handleSubmit">
             <input type="hidden" name="remember" value="true" />
                 <div class="-space-y-px rounded-md shadow-sm">
                     <div class="mb-8">
@@ -68,10 +83,11 @@ export default {
                             name="password" 
                             type="password" 
                             autocomplete="current-password" 
-                            required=""
+                            required
                             class="relative block w-full appearance-none rounded-none rounded-b-md outline-none border-b-2 border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" 
                             placeholder="Password" 
                         />
+                        <div v-if="passwordError" class="text-red-500 mt-2 font-xs font-bold">{{ passwordError }}</div>
                     </div>
                 </div>
                 <div class="-space-y-px rounded-md shadow-sm">
@@ -111,11 +127,17 @@ export default {
                         </div>
                     </div>
                 </div>
+                <!-- terms -->
+                <div class="flex mt-1 mr-3">
+                    <input type="checkbox" v-model="terms" required>
+                    <label>&nbsp;Accept terms and conditions</label>
+                </div>
+                <!-- submit button -->
+                <button class="inline-block bg-indigo-500 font-bold text-white rounded shadow py-2 px-5 text-sm">
+                    Submit
+                </button>
             </form>
-            <!-- two-way data binding -->
-            <p class="mb-6 text-sm text-gray-900">Email: {{ email }}</p>
-            <p class="mb-6 text-sm text-gray-900">password: {{ password }}</p>
-            <p class="mb-6 text-sm text-gray-900">Your role: {{ role }}</p>
+
         </div>
     </div>
 </template>
