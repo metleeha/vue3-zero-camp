@@ -1,6 +1,11 @@
 <script>
 export default {
-
+    data() {
+        return {
+            email: '',
+            password: '',
+        }
+    }
 }
 
 </script>
@@ -21,6 +26,7 @@ export default {
                             Email
                         </label>
                         <input 
+                            v-model="email"
                             id="email" 
                             name="email" 
                             type="email" 
@@ -37,6 +43,7 @@ export default {
                             Password
                         </label>
                         <input 
+                            v-model="password"
                             id="password" 
                             name="password" 
                             type="password" 
@@ -48,6 +55,9 @@ export default {
                     </div>
                 </div>
             </form>
+            <!-- two-way data binding -->
+            <p class="mt-6 text-sm text-gray-900">Email: {{ email }}</p>
+            <p class="mt-6 text-sm text-gray-900">password: {{ password }}</p>
         </div>
 
     </div>
