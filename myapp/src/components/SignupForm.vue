@@ -1,8 +1,13 @@
 <script>
 export default {
-
+    name: 'SinupForm',
+    data() {
+        return {
+            email: '',
+            password: '',
+        }
+    }
 }
-
 </script>
 
 <template>
@@ -12,8 +17,7 @@ export default {
             <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
         </div>
         <form class="mt-20 space-y-6" action="#" method="POST">
-            <input type="hidden" name="remember" value="true" />
-                <div class="-space-y-px rounded-md shadow-sm">
+            <div class="-space-y-px rounded-md shadow-sm">
                     <div class="mb-8">
                         <label 
                             for="email" 
@@ -21,6 +25,7 @@ export default {
                             Email
                         </label>
                         <input 
+                            v-model="email"
                             id="email" 
                             name="email" 
                             type="email" 
@@ -30,6 +35,8 @@ export default {
                             placeholder="Email" 
                         />
                     </div>
+                </div>
+                <div class="-space-y-px rounded-md shadow-sm">
                     <div class="mb-8">
                         <label 
                             for="password" 
@@ -37,6 +44,7 @@ export default {
                             Password
                         </label>
                         <input 
+                            v-model="password"
                             id="password" 
                             name="password" 
                             type="password" 
@@ -47,9 +55,11 @@ export default {
                         />
                     </div>
                 </div>
-            </form>
-        </div>
-
+        </form>
+        <!-- two-way data binding -->
+        <p class="mt-6 text-sm text-gray-900">Email: {{ email }}</p>
+        <p class="mt-6 text-sm text-gray-900">password: {{ password }}</p>
+     </div>
     </div>
 </template>
 
