@@ -6,7 +6,7 @@ export default {
 
 <template>
     <div>
-        <h2 class="text-3xl font-medium tracking-tight text-white sm:text-4xl">This is a Home Page</h2>
+        <h1 class="text-3xl font-medium tracking-tight text-white sm:text-4xl">This is a Home Page</h1>
     </div>
 </template>
 
