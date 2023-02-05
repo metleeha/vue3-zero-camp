@@ -3,7 +3,7 @@ import SignupForm from './components/SignupForm.vue';
 </script>
 
 <template>
-  <div class="h-full">
+  <div>
     <SignupForm />
   </div>
 </template>
