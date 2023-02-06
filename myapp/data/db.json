@@ -1,0 +1,7 @@
+{
+    "blogs": [
+        { "title": "USA: NewYork", "id": 1, "details": "visiting art galleries and museums" },
+        { "title": "Thailand: Chian Mai", "id": 2,  "details": "exploring remote workspaces" },
+        { "title": "Mongolia: Ulaanbaata", "id": 3, "details": "riding a horese at an equestrian camp" }
+    ]
+}
