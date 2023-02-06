@@ -21,7 +21,7 @@ export default {
         <p class="text-md text-white mt-5">{{ blog.details }}</p>
     </div>
     <div v-else>
-        <p>Loading blog details...</p>
+        <p class="mt-10 text-xl text-white">Loading blog details...</p>
     </div>
 </template>
 <style>

@@ -30,7 +30,7 @@ export default {
       </div>
     </div>
     <div v-else>
-      <p>Loading blogs...</p>
+      <p class="mt-10 text-xl text-white">Loading Blogs...</p>
     </div>
 </template>
 
