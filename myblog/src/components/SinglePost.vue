@@ -6,17 +6,19 @@
 </template>
 
 <script>
-import {computed} from 'vue'
+import { computed } from "vue";
 
 export default {
   props: ["post"],
   setup(props) {
     const snippet = computed(() => {
       return props.post.body.substring(0, 200) + "...";
-    })
-    return { snippet }
+    });
+    return { snippet };
   },
 };
 </script>
 
-<style></style>
+<style>
+
+</style>
