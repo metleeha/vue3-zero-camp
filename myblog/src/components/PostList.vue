@@ -12,7 +12,7 @@ export default {
   props: ["posts"],
   components: { SinglePost },
   setup(props) {
-    console.log(props.posts);
+    // console.log(props.posts);
   },
 };
 </script>
