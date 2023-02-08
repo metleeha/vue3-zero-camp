@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style scoped>
-.hello{
+.hello {
   text-align: center;
   font-size: 2rem;
   margin-top: 5rem;
