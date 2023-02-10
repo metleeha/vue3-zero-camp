@@ -25,4 +25,23 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.post {
+  text-align: left;
+  padding: 1.5rem;
+}
+.post h3 {
+  font-family: Merriweather, serif;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+}
+.post p {
+  font-family: Raleway, sans-serif;
+  font-size: 1rem;
+  margin: 2rem 0;
+}
+.post span {
+  color: #3d3d3d;
+  margin: 0 0.25rem;
+}
+</style>

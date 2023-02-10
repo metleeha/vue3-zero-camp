@@ -4,21 +4,19 @@
       "id": 1,
       "title": "welcome to the new blog",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "tags": [
-        "vue",
-        "coding",
-        "news"
-      ]
+      "tags": ["vue", "coding", "news"]
     },
     {
       "id": 2,
       "title": "Top 5 CSS UI Framework 2023",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "tags": [
-        "css",
-        "coding",
-        "news"
-      ]
+      "tags": ["css", "coding", "news"]
+    },
+    {
+      "id": 3,
+      "title": "How to Build AI Apps as Frontend Engineer",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "tags": ["frontend", "coding", "ai"]
     }
   ]
 }
