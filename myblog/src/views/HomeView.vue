@@ -24,20 +24,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.test {
-  text-align: center;
-  padding: 5rem;
-}
-.test h3 {
-  font-family: Merriweather, serif;
-  font-size: 1.5rem;
-  margin: 2rem 0;
-}
-.test p {
-  font-family: Raleway, sans-serif;
-  font-size: 1rem;
-  margin: 2rem 0;
-}
-</style>
