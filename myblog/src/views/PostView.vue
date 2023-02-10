@@ -1,5 +1,5 @@
 <template>
-    <div v-if="error">{{ error }}</div>
+  <div v-if="error">{{ error }}</div>
   <div v-if="post" class="post">
     <h3>{{ post.title }}</h3>
     <p class="pre">{{ post.body }}</p>
@@ -8,16 +8,16 @@
 </template>
 
 <script>
-import getPost from '../utils/getPost'
+import getPost from "../utils/getPost";
 
 export default {
-  props: ['id'],
+  props: ["id"],
   setup(props) {
-    const { error, post, load } = getPost(props.id)
-    load()
-    return { error, post }
+    const { error, post, load } = getPost(props.id);
+    load();
+    return { error, post };
   },
-}
+};
 </script>
 
 <style scoped>
