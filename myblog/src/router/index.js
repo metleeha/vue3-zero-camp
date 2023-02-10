@@ -21,13 +21,13 @@ const router = createRouter({
     {
       path: "/create",
       name: "create",
-      components: CreateView,
+      component: CreateView,
     },
     {
       path: "/tags/:tag",
-      name: "Tag",
+      name: "tag",
       component: TagView,
-    }
+    },
   ],
 });
 

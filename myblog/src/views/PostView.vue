@@ -4,18 +4,21 @@
     <h3>{{ post.title }}</h3>
     <p class="pre">{{ post.body }}</p>
   </div>
-  <div v-else>Loading...</div>
+  <div v-else>
+    <ZeroSpinner />
+  </div>
 </template>
 
 <script>
 import getPost from "../utils/getPost";
 import { useRoute } from "vue-router";
+import ZeroSpinner from "../components/ZeroSpinner.vue";
 
 export default {
   props: ["id"],
-  setup(props) {
+  components: { ZeroSpinner },
+  setup() {
     const route = useRoute();
-    // console.log(route);
     const { error, post, load } = getPost(route.params.id);
     load();
     return { error, post };
@@ -29,16 +32,19 @@ export default {
   padding: 5rem;
   margin-left: 2rem;
 }
+
 .post h3 {
   font-family: Merriweather, serif;
   font-size: 1.5rem;
   margin: 2rem 0;
 }
+
 .post p {
   font-family: Raleway, sans-serif;
   font-size: 1rem;
   margin: 2rem 0;
 }
+
 .pre {
   white-space: pre-wrap;
 }
