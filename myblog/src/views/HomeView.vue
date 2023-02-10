@@ -1,5 +1,5 @@
 <template>
-  <div class="test border-lime-400 border-2">
+  <div class="border-lime-400 border-2">
     <div v-if="error">{{ error }}</div>
     <div v-if="posts.length">
       <PostList :posts="posts" />
@@ -26,18 +26,5 @@ export default {
 </script>
 
 <style>
-.test {
-  text-align: center;
-  padding: 5rem;
-}
-.test h3 {
-  font-family: Merriweather, serif;
-  font-size: 1.5rem;
-  margin: 2rem 0;
-}
-.test p {
-  font-family: Raleway, sans-serif;
-  font-size: 1rem;
-  margin: 2rem 0;
-}
+
 </style>
