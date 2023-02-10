@@ -16,7 +16,7 @@
         </div>
         <div class="flex mr-10">
           <RouterLink class="router-deco" to="/">Home</RouterLink>
-          <RouterLink class="router-deco" to="/about">About</RouterLink>
+          <RouterLink class="router-deco" to="/create">Create</RouterLink>
         </div>
       </div>
     </div>
