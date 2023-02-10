@@ -9,11 +9,14 @@
 
 <script>
 import getPost from "../utils/getPost";
+import { useRoute } from "vue-router";
 
 export default {
   props: ["id"],
   setup(props) {
-    const { error, post, load } = getPost(props.id);
+    const route = useRoute();
+    // console.log(route);
+    const { error, post, load } = getPost(route.params.id);
     load();
     return { error, post };
   },
