@@ -6,11 +6,7 @@ const getPosts = () => {
 
   const load = async () => {
     try {
-      let data = await fetch("http://localhost:3000/posts");
-      if (!data.ok) {
-        throw Error("no available data");
-      }
-      posts.value = await data.json();
+      // fireStore collections data 불러오기
     } catch (err) {
       error.value = err.message;
     }
